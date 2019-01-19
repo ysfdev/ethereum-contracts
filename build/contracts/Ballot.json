@@ -1,0 +1,109 @@
+{
+  "contractName": "Ballot",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a72305820f87ab0fda41f122098703f09cdbe9d39c330c5899cd63667fe91208309e6c6870029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a72305820f87ab0fda41f122098703f09cdbe9d39c330c5899cd63667fe91208309e6c6870029",
+  "sourceMap": "33:2739:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;33:2739:0;;;;;;;",
+  "deployedSourceMap": "33:2739:0:-;;;;;",
+  "source": "pragma solidity >=0.4.0 <0.6.0;\n\ncontract Ballot {\n\n  // struct Voter {\n\t//   uint weight;\n\t// \tbool voted;\n\t// \tuint8 vote;\n\t// }\n\n  // struct Proposal {\n  //   uint voteCount;\n  // }\n\n  // enum Stage {Init, Reg, Vote, Done}\n  // Stage public stage = Stage.Init;\n\n  // address chairperson;\n  // mapping(address => Voter) voters;\n  // Proposal[] proposals;\n\n  // uint startTime;\n\n  // // initialize the Ballot with the given total of proposals for the campaign Ballot\n  // constructor(uint8 _numProposals) public {\n  //   // The creator of Ballot its the chairperson, which higher voting weight/ for testing purposes\n  //   chairperson = msg.sender;\n  //   voters[chairperson].weight = 2; \n  //   proposals.length = _numProposals;\n  //   // set the new stage Reg(Registration)\n  //   // so we can start receiving new registeree\n  //   stage = Stage.Reg;\n  //   // for testing purposes we will rely on now = block.timestamp;\n  //   // for official version, we should receive the specific deadlines timestamps on the Constructor\n  //   startTime = now; \n  // }\n\n//   // Register given voter (${toVoter}) to this ballot, so it has right to vote;\n//   // NOTE: Registration can only done by the chairperson\n//   function register(address toVoter) public {\n//     // Verify the ballot it's ready to accept registrations\n//     if (stage != Stage.Reg) {return;}\n//     // Only continue, if sender if chairperson and given voter has not already voted\n//     if (msg.sender != chairperson || voters[toVoter].voted) return;\n//     // all regular voters has a default voting weight of 1;\n//     voters[toVoter].weight = 1;\n//     voters[toVoter].voted = false;\n\n//     // for testing purposes; we curently update the stage to Vote after 10 seconds\n//     if (now > (startTime+ 10 seconds)) {\n//       stage = Stage.Vote;\n//       startTime = now;\n//     }\n//   }\n\n//  // Give a single vote to given ${toPrososal}\n//   function vote(uint8 toProposal) public {\n//     if (stage != Stage.Vote) return;\n//     Voter storage sender = voters[msg.sender];\n\n//     if (sender.voted || toProposal >= proposals.length) revert();\n//     sender.voted = true;\n//     proposals[toProposal].voteCount += sender.weight;\n\n//     if (now > (startTime+ 10 seconds)) {\n//       stage = Stage.Done;\n//     }\n//   }\n\n//   // Calculate and return the proposal with the highest voteCount\n//   function winningProposal() public view returns (uint8 _winningProposal) {\n//     if (stage != Stage.Done) return _winningProposal;\n//     uint256 winningVoteCount = 0;\n//     for (uint8 prop = 0; prop < proposals.length; prop++) {\n//       if (proposals[prop].voteCount > winningVoteCount) {\n//         winningVoteCount = proposals[prop].voteCount;\n//         _winningProposal = prop;\n//       }\n//     }\n//   }\n}",
+  "sourcePath": "/home/ysfdev/projects/blockchain/ethereum-contracts-new/contracts/Ballot.sol",
+  "ast": {
+    "absolutePath": "/home/ysfdev/projects/blockchain/ethereum-contracts-new/contracts/Ballot.sol",
+    "exportedSymbols": {
+      "Ballot": [
+        2
+      ]
+    },
+    "id": 3,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "Ballot",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "33:2739:0"
+      }
+    ],
+    "src": "0:2772:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/ysfdev/projects/blockchain/ethereum-contracts-new/contracts/Ballot.sol",
+    "exportedSymbols": {
+      "Ballot": [
+        2
+      ]
+    },
+    "id": 3,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "Ballot",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "33:2739:0"
+      }
+    ],
+    "src": "0:2772:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-01-19T21:49:32.386Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
